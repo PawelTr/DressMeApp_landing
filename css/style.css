@@ -360,6 +360,20 @@ section {
   transition: all 0.7s ease-in-out;
 }
 
+.hero__main-block-image {
+  background-color: black;
+  width: 67px;
+  height: 112px;
+  position: absolute;
+  left: 35px;
+  top: 26px;
+  border-radius: 4px;
+  background-size: cover;
+  background-image: url('../assets/app-snippets/hero/1.jpg');
+  /* transition: all 0.7s ease-in-out; */
+  animation: phoneImage 8s ease-in-out infinite;
+}
+
 .hero__main-block {
   bottom: 0;
   left: 50%;
@@ -369,6 +383,7 @@ section {
 
 .hero__phone {
   max-height: 200px;
+  position: relative;
 }
 
 .hero__card {
@@ -389,23 +404,63 @@ section {
 
 /* Card colors */
 .hero__card--1 {
-  animation: circlePosition1 ease-in-out 7.7s infinite;
+  animation: circlePosition1 ease-in-out 8s infinite;
 }
 
 .hero__card--2 {
-  animation: circlePosition2 ease-in-out 7.7s infinite;
+  animation: circlePosition2 ease-in-out 8s infinite;
 }
 
 .hero__card--3 {
-  animation: circlePosition3 ease-in-out 7.7s infinite;
+  animation: circlePosition3 ease-in-out 8s infinite;
 }
 
 .hero__card--4 {
-  animation: circlePosition4 ease-in-out 7.7s infinite;
+  animation: circlePosition4 ease-in-out 8s infinite;
+}
+
+@keyframes phoneImage {
+  0% {
+    background-image: url('../assets/app-snippets/hero/3.jpg');
+  }
+
+  10% {
+    background-image: url('../assets/app-snippets/hero/1.jpg');
+  }
+
+  25% {
+    background-image: url('../assets/app-snippets/hero/1.jpg');
+  }
+
+  35% {
+    background-image: url('../assets/app-snippets/hero/2.jpg');
+
+  }
+
+  50% {
+    background-image: url('../assets/app-snippets/hero/2.jpg');
+  }
+
+  60% {
+    background-image: url('../assets/app-snippets/hero/4.jpg');
+  }
+
+  75% {
+    background-image: url('../assets/app-snippets/hero/4.jpg');
+  }
+
+  85% {
+    background-image: url('../assets/app-snippets/hero/3.jpg');
+  }
+
+  100% {
+    background-image: url('../assets/app-snippets/hero/3.jpg');
+  }
 }
 
 /* Simple circular animation */
 @keyframes circlePosition1 {
+
   0%,
   100% {
     top: 70px;
@@ -476,13 +531,14 @@ section {
 }
 
 @keyframes circlePosition2 {
+
   0%,
   100% {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   5% {
     transform: scale(0.8);
   }
@@ -546,6 +602,7 @@ section {
 }
 
 @keyframes circlePosition3 {
+
   0%,
   100% {
     top: 70px;
@@ -616,6 +673,7 @@ section {
 }
 
 @keyframes circlePosition4 {
+
   0%,
   100% {
     top: 50%;
@@ -655,7 +713,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   55% {
     transform: scale(0.8);
   }
@@ -711,14 +769,22 @@ section {
     height: 400px;
   }
 
+  .hero__main-block-image {
+    width: 100px;
+    height: 168px;
+    left: 83px;
+    top: 39px;
+  }
 
-   .hero__card {
+  .hero__card {
     width: 120px;
     height: 180px;
-  } 
+  }
 
   .hero__phone {
     max-height: 300px;
+    min-height: 300px;
+    min-width: 181px;
     margin-left: 30px;
     margin-bottom: -30px;
   }
