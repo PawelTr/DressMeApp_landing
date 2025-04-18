@@ -358,9 +358,6 @@ section {
   justify-content: center;
   border-radius: var(--radius-md);
   transition: all 0.7s ease-in-out;
-  backface-visibility: hidden;
-  color: white;
-  font-weight: 700;
 }
 
 .hero__main-block {
@@ -381,9 +378,6 @@ section {
   align-items: center;
   justify-content: center;
   transition: all 0.7s linear;
-  /* border: 1px solid var(--color-primary); */
-  background-color: var(--color-background);
-  box-shadow: var(--shadow-sm);
 }
 
 .hero__icon {
@@ -391,24 +385,23 @@ section {
   position: absolute;
   z-index: 2;
   top: 15px;
-
 }
 
 /* Card colors */
 .hero__card--1 {
-  animation: circlePosition1 ease-in-out 7s infinite;
+  animation: circlePosition1 ease-in-out 7.7s infinite;
 }
 
 .hero__card--2 {
-  animation: circlePosition2 ease-in-out 7s infinite;
+  animation: circlePosition2 ease-in-out 7.7s infinite;
 }
 
 .hero__card--3 {
-  animation: circlePosition3 ease-in-out 7s infinite;
+  animation: circlePosition3 ease-in-out 7.7s infinite;
 }
 
 .hero__card--4 {
-  animation: circlePosition4 ease-in-out 7s infinite;
+  animation: circlePosition4 ease-in-out 7.7s infinite;
 }
 
 /* Simple circular animation */
