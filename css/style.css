@@ -362,11 +362,11 @@ section {
 
 .hero__main-block-image {
   background-color: black;
-  width: 67px;
-  height: 112px;
+  width: 88px;
+  height: 152px;
   position: absolute;
-  left: 35px;
-  top: 26px;
+  left: 48px;
+  top: 35px;
   border-radius: 4px;
   background-size: cover;
   background-image: url('../assets/app-snippets/hero/1.jpg');
@@ -375,14 +375,14 @@ section {
 }
 
 .hero__main-block {
-  bottom: 0;
+  bottom: calc(var(--spacing-xxl) * -1);
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
 }
 
 .hero__phone {
-  max-height: 200px;
+  min-width: 164px;
   position: relative;
 }
 
@@ -786,7 +786,6 @@ section {
     min-height: 300px;
     min-width: 181px;
     margin-left: 30px;
-    margin-bottom: -30px;
   }
 
 }
@@ -871,6 +870,14 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease-out;
+}
+
+.how-it-works__step.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .how-it-works__number {
@@ -884,6 +891,14 @@ section {
   color: white;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: subtlePulse 3s ease-in-out infinite;
+  box-shadow: 0 0 0 rgba(200, 161, 101, 0.4);
+}
+
+.how-it-works__step:hover .how-it-works__number {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(200, 161, 101, 0.4);
 }
 
 .how-it-works__card {
@@ -893,20 +908,111 @@ section {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform: translateY(0);
 }
 
-.how-it-works__card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+.how-it-works__step:hover .how-it-works__card {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), 0 10px 20px rgba(200, 161, 101, 0.15);
 }
 
 .how-it-works__title {
   margin-bottom: var(--spacing-sm);
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.how-it-works__step.in-view .how-it-works__title {
+  animation: slideInLeft 0.6s ease backwards;
+}
+
+.how-it-works__step:hover .how-it-works__title {
+  transform: scale(1.03);
+  color: var(--color-primary);
 }
 
 .how-it-works__text {
   color: var(--color-text-light);
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.how-it-works__step.in-view .how-it-works__text {
+  animation: slideInRight 0.6s ease 0.2s backwards;
+}
+
+.how-it-works__step:hover .how-it-works__text {
+  transform: scale(1.03);
+}
+
+/* Micro-animation keyframes for How It Works section */
+@keyframes subtlePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(200, 161, 101, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(200, 161, 101, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 161, 101, 0);
+  }
+}
+
+@keyframes subtleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Image animation for the cards */
+.how-it-works__card img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.how-it-works__step:hover .how-it-works__card img {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* Special animation for step 3 gif */
+.how-it-works__step:nth-child(3) .how-it-works__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works__step:nth-child(3) .how-it-works__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  animation: shineEffect 3s infinite ease-in-out;
+}
+
+/* Step numbers staggered animation */
+.how-it-works__step:nth-child(1) .how-it-works__number {
+  animation-delay: 0s;
+}
+
+.how-it-works__step:nth-child(2) .how-it-works__number {
+  animation-delay: 0.5s;
+}
+
+.how-it-works__step:nth-child(3) .how-it-works__number {
+  animation-delay: 1s;
 }
 
 /* UI Mockup Components */
